@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Logo Detector - Sprint 14</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <div>
+            <h1>Automatic Logo Detector</h1>
+            <p>Browser based logo candidate detection</p>
+        </div>
+
+        <div id="status" class="status">
+            Ready
+        </div>
+    </header>
+
+
+    <section class="upload-card">
+
+        <label for="imageInput" class="upload-area">
+
+            <div class="upload-icon">↑</div>
+
+            <strong>Select Image</strong>
+
+            <span>
+                JPG, PNG or WEBP
+            </span>
+
+        </label>
+
+        <input
+            type="file"
+            id="imageInput"
+            accept="image/jpeg,image/png,image/webp"
+        >
+
+    </section>
+
+
+    <div class="buttons">
+
+        <button
+            id="analyzeBtn"
+            disabled
+        >
+            Analyze Image
+        </button>
+
+        <button
+            id="clearBtn"
+            class="clear"
+        >
+            Clear
+        </button>
+
+    </div>
+
+
+    <section
+        id="progressBox"
+        class="progress-box hidden"
+    >
+
+        <div class="progress-info">
+
+            <span id="progressText">
+                Preparing...
+            </span>
+
+            <span id="progressNumber">
+                0%
+            </span>
+
+        </div>
+
+        <div class="progress-track">
+
+            <div
+                id="progressBar"
+                class="progress-bar"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+    <section
+        id="previewSection"
+        class="panel hidden"
+    >
+
+        <div class="panel-header">
+
+            <h2>Detected Image</h2>
+
+            <span id="dimensions"></span>
+
+        </div>
+
+        <div class="canvas-container">
+
+            <canvas id="canvas"></canvas>
+
+        </div>
+
+    </section>
+
+
+    <section
+        id="resultsSection"
+        class="panel hidden"
+    >
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Logo Candidates</h2>
+
+                <p>
+                    Regions ranked by visual characteristics.
+                </p>
+            </div>
+
+            <span id="resultCount"></span>
+
+        </div>
+
+        <div id="results"></div>
+
+    </section>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
